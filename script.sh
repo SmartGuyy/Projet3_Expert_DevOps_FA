@@ -1,4 +1,5 @@
 #!/bin/bash
+# WARNING : wait till script finished running
 
 dnf update -y 
 
@@ -38,14 +39,15 @@ dnf install -y ansible
 localectl set-keymap fr
 
 # create Dockerfile and execute it so container is ready on startup
-cd /home/vagrant
-touch Dockerfile
+touch /home/vagrant/Dockerfile
 echo "FROM debian:9 
 EXPOSE 22/tcp
 EXPOSE 80/tcp
-RUN apt-get update -y \
-&& apt-get install -y nginx" >> Dockerfile
+RUN apt-get update -y \\
+&& apt-get install -y nginx" >> /home/vagrant/Dockerfile
 # we build dockerfile
-docker build -t nginx-projet .
+docker build -t nginx-projet . -f /home/vagrant/Dockerfile
 # start container with port 80 mapped to local port 80
-docker run --name nginx-projet -p 80:80 -d nginx 
+docker run -dit --restart unless-stopped --name nginx-projet -p 80:80 -d nginx 
+
+reboot now
