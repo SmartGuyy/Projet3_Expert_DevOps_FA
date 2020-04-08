@@ -1,0 +1,2 @@
+# pour fournir Guest Additions à chaque VM by Vagrant
+vagrant plugin install vagrant-vbguest
