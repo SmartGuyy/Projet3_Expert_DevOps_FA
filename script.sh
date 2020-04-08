@@ -11,7 +11,7 @@ dnf remove docker docker-ce docker-ce-cli containerd.io
 dnf groupinstall -y gnome-desktop
 dnf install -y xorg*
 
-# removing useless tools
+# removing useless GUI tools
 dnf remove -y initial-setup initial-setup-gui
 
 # set persistent GUI
