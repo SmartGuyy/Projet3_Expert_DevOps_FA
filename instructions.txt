@@ -1,2 +1,0 @@
-# to get Guest Additions at each vagrant up
-vagrant plugin install vagrant-vbguest

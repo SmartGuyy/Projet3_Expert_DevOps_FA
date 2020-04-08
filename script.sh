@@ -47,7 +47,7 @@ RUN apt-get update -y \\
 && apt-get install -y nginx" >> /home/vagrant/Dockerfile
 # we build dockerfile
 docker build -t nginx-projet . -f /home/vagrant/Dockerfile
-# start container with port 80 mapped to local port 80
+# start container with port 80 mapped to local port 80 and restart it if it goes down
 docker run -dit --restart unless-stopped --name nginx-projet -p 80:80 -d nginx 
 
 reboot now
