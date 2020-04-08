@@ -36,3 +36,16 @@ dnf install -y ansible
 
 # set keyboard to french
 localectl set-keymap fr
+
+# create Dockerfile and execute it so container is ready on startup
+cd /home/vagrant
+touch Dockerfile
+echo "FROM debian:9 
+EXPOSE 22/tcp
+EXPOSE 80/tcp
+RUN apt-get update -y \
+&& apt-get install -y nginx" >> Dockerfile
+# we build dockerfile
+docker build -t nginx-projet .
+# start container with port 80 mapped to local port 80
+docker run --name nginx-projet -p 80:80 -d nginx 
