@@ -23,8 +23,8 @@ Follow the README of the other repository and it should work as expected.
 
 Otherwise you could just install docker locally and run the following steps : 
 
-touch Dockerfile
 ```bash
+touch Dockerfile
 echo "FROM debian:9 
 EXPOSE 22/tcp
 EXPOSE 80/tcp
