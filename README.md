@@ -6,7 +6,7 @@ Now install Guest additions extension if you would like to have more functionali
 
 "vagrant plugin install vagrant-vbguest"
 
-Then you just need to do "vagrant up" from the folder and it will automatically download CentOS 8 image, run it, update it, install Docker+Ansible and then it will build a Nginx Docker container with port 80 mapped to local port 80.
+Then you just need to do **"vagrant up"** from the folder and it will automatically download CentOS 8 image, run it, update it, install Docker+Ansible and then it will build a Nginx Docker container with port 80 mapped to local port 80.
 
 Please wait till the end of execution before doing anything on the VM.
 
