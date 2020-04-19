@@ -8,6 +8,8 @@ Now install Guest additions extension if you would like to have more functionali
 
 Then you just need to do "vagrant up" from the folder and it will automatically download CentOS 8 image, run it, update it, install Docker+Ansible and then it will build a Nginx Docker container with port 80 mapped to local port 80.
 
+Please wait till the end of execution before doing anything on the VM.
+
 After execution, it will restart the VM so the GUI can initialize.
 
 Then you could do a curl or download Firefox to visit 127.0.0.1 and check that nginx is avalaible.
