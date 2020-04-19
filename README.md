@@ -29,9 +29,9 @@ EXPOSE 22/tcp
 EXPOSE 80/tcp
 RUN apt-get update -y \
 && apt-get install -y nginx" >> Dockerfile
-## we build dockerfile
+1) we build dockerfile
 docker build -t nginx-projet . -f /home/vagrant/Dockerfile
-## start container with port 80 mapped to local port 80 and restart it if it goes down
+2) start container with port 80 mapped to local port 80 and restart it if it goes down
 docker run -dit --restart unless-stopped --name nginx-projet -p 80:80 -d nginx  
-## now check 127.0.0.1 in your browser !
+3) now check 127.0.0.1 in your browser !
  
