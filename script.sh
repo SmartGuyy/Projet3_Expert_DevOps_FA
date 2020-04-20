@@ -25,7 +25,21 @@ dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce
 dnf install docker-ce --nobest -y
 
 # installing tools
-dnf install -y device-mapper-persistent-data lvm2 nano
+dnf install -y device-mapper-persistent-data lvm2
+
+# adding repo and installing vsscode
+rpm --import https://packages.microsoft.com/keys/microsoft.asc
+
+tee /etc/yum.repos.d/vscode.repo <<ADDREPO
+[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+ADDREPO
+
+dnf install code -y
 
 # enabling and starting docker
 systemctl start docker
