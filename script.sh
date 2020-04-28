@@ -52,6 +52,9 @@ dnf install -y ansible
 # set keyboard to french
 localectl set-keymap fr
 
+# install firefox
+dnf install firefox -y
+
 # create Dockerfile and execute it so container is ready on startup
 touch /home/vagrant/Dockerfile
 echo "FROM debian:9 
